@@ -53,30 +53,20 @@ changed Makefile:
     
     # ex: set ts=8 noet:
 
-    all: qt5
+	all: qt5
 
-    test: testpy2
+	test:  testpy3
+	
+	testpy3:
+		python3 -m unittest discover tests
 
-    testpy2:
-	    python -m unittest discover tests
+	qt5: qt5py3 
 
-    testpy3:
-	    python3 -m unittest discover tests
+	qt5py3:
+		pyrcc5 -o resources.py resources.qrc
 
-    qt5: qt5py2
+	.PHONY: test
 
-    qt5: qt5py3
-
-    qt5py2:
-	    pyrcc5 -py2 -o resources.py resources.qrc
-
-    #qt5py3:
-	 #   pyrcc5 -py3 -o resources.py resources.qrc
-
-    qt5py3:
-	    pyrcc5 -o resources.py resources.qrc
-
-    .PHONY: test    
     
 then 
 
