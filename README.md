@@ -63,9 +63,9 @@ changed Makefile:
     testpy3:
 	    python3 -m unittest discover tests
 
-    qt5: qt4py2
+    qt5: qt5py2
 
-    qt5: qt4py3
+    qt5: qt5py3
 
     qt5py2:
 	    pyrcc5 -py2 -o resources.py resources.qrc
