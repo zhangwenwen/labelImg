@@ -187,6 +187,12 @@ License
 
 Citation: Tzutalin. LabelImg. Git code (2015). https://github.com/tzutalin/labelImg
 
+@misc{labelImg-Tzutalin,
+	author={Tzutalin},
+	title={LabelImg. Git code (2015)},
+	howpublished={\url{https://github.com/tzutalin/labelImg},
+	}
+
 Related
 ~~~~~~~
 
