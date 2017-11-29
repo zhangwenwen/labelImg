@@ -45,7 +45,36 @@ Linux/Ubuntu/Mac requires at least [Python 2.6](http://www.python.org/getit/) an
     brew install libxml2
     make all
     ./labelImg.py
+##### update
 
+In  the new platform of mac os 10.12.3（Sierra），the QT4 is not compatible with it ，so you can directly  make the program under QT5 with changing some configuration in the Makefile.
+
+changed Makefile:
+    
+    # ex: set ts=8 noet:
+
+	all: qt5
+
+	test:  testpy3
+	
+	testpy3:
+		python3 -m unittest discover tests
+
+	qt5: qt5py3 
+
+	qt5py3:
+		pyrcc5 -o resources.py resources.qrc
+
+	.PHONY: test
+
+    
+then 
+
+    sudo apt-get install pyqt4-dev-tools
+    sudo pip install lxml
+    make all
+    ./labelImg.py    
+    
 #### Windows
 
 Download and setup [Python 2.6 or later](https://www.python.org/downloads/windows/), [PyQt4](https://www.riverbankcomputing.com/software/pyqt/download) and [install lxml](http://lxml.de/installation.html).
